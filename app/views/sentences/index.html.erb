@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sentences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Category</th>
+      <th>Language</th>
+      <th colspan="2">Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sentences.each do |sentence| %>
+      <tr>
+        <td><%= sentence.content %></td>
+        <td><%= sentence.category %></td>
+        <td><%= sentence.language %></td>
+        <!-- <td><%= link_to 'Show', sentence %></td> -->
+        <td><%= link_to 'Edit', edit_sentence_path(sentence) %></td>
+        <td><%= link_to 'Delete', sentence, method: :delete, data: { confirm: 'Are you sure you want to delete this sentence?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sentence', new_sentence_path %>
+
+<%= link_to 'Home', root_path %>
