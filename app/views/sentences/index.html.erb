@@ -16,8 +16,8 @@
     <% @sentences.each do |sentence| %>
       <tr>
         <td><%= sentence.content %></td>
-        <td><%= sentence.category %></td>
-        <td><%= sentence.language %></td>
+        <td><%= show_category_name(sentence.category) %></td>
+        <td><%= show_language_name(sentence.language) %></td>
         <!-- <td><%= link_to 'Show', sentence %></td> -->
         <td><%= link_to 'Edit', edit_sentence_path(sentence) %></td>
         <td><%= link_to 'Delete', sentence, method: :delete, data: { confirm: 'Are you sure you want to delete this sentence?' } %></td>
