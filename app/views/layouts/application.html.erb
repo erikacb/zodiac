@@ -1,26 +1,29 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>Zodiac</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zodiac</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <body>
+</head>
 
-    <!-- Begin page content -->
+<body>
+
+  <!-- Begin page content -->
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <footer class="footer">
     <div class="container">
-      <div class="page-header">
-        <h1>Zodiac</h1>
-      </div>
-      <%= yield %>
-    </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+      <div class="row">
+        <div class="col-md-6"><p class="text-muted">Created by <b>Erika Bueno</b> with <font color="red">&#x2764;</font></p></div>
+        <div class="col-md-6"><p class="text-muted-icon"><a href="https://github.com/erikacb/zodiac"><i class="fa fa-github" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;<a><i class="fa fa-linkedin" aria-hidden="true"></i></a></p></div>
+      </div>
+
       </div>
     </footer>
 
