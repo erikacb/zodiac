@@ -1,34 +1,26 @@
 <%= form_for(sentence) do |f| %>
-  <% if sentence.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(sentence.errors.count, "error") %> prohibited this sentence from being saved:</h2>
+<% if sentence.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(sentence.errors.count, "error") %> prohibited this sentence from being saved:</h2>
 
-      <ul>
-      <% sentence.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% sentence.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :content, "Sentence's content:" %>
-    <%= f.text_area :content %>
-  </div>
+<div class="form-group">
+  <%= f.label :content, "Sentence's content:" %>
+  <%= f.text_area :content, class: 'form-control' %>
+</div>
 
-  <div class="field">
-    <%= f.select :category, [ ['Family', 0], ['Love', 1], ['Health', 2], ['Career',3], ['Money',4] ], :prompt => 'Select Category' %>
-    <!-- <%= f.label :category %>
-    <%= f.number_field :category %> -->
-  </div>
+<div class="form-group">
+  <%= f.select :category, [ ['Family', 0], ['Love', 1], ['Health', 2], ['Career',3], ['Money',4] ], :prompt => 'Select Category' %> <%= f.select :language, [ ['English', 0], ['Brazilian Portuguese',1] ], :prompt => 'Select Language' %>
+</div>
 
-  <div class="field">
-    <%= f.select :language, [ ['English', 0], ['Brazilian Portuguese',1] ], :prompt => 'Select Language' %>
-    <!-- <%= f.label :language %>
-    <%= f.number_field :language %> -->
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Save", class: "btn btn-primary" %>
-  </div>
+<div class="actions">
+  <%= f.submit "Save", class: "btn btn-success" %> <%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, sentences_path %>
+</div>
 <% end %>
