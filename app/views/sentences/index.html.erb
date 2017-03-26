@@ -4,13 +4,15 @@
   <h1>Sentences</h1>
 </div>
 
+<div class="save-footer">
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Content</th>
+      <th>Content
+      </th>
       <th>Category</th>
       <th>Language</th>
-      <th></th>
+      <th>&nbsp;<%= link_to '<i class="fa fa-plus" aria-hidden="true"></i>'.html_safe, new_sentence_path %></th>
     </tr>
   </thead>
 
@@ -27,8 +29,9 @@
   </tbody>
 </table>
 
-<br>
+<%= link_to '<button type="button" class="btn btn-warning">Home</button>'.html_safe, root_path %>
+</div>
 
-<%= link_to '<i class="fa fa-plus" aria-hidden="true"></i>'.html_safe, new_sentence_path %>
 
-<%= link_to '<i class="fa fa-home" aria-hidden="true"></i>'.html_safe, root_path %>
+<!-- <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i>'.html_safe, new_sentence_path %>
+<%= link_to '<i class="fa fa-home" aria-hidden="true"></i>'.html_safe, root_path %> -->
