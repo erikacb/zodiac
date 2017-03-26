@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @sentence.content %>
-</p>
+<br><br>
+<div class="panel panel-info">
+  <div class="panel-heading">
+     <h3 class="panel-title"><%= notice %></h3>
+   </div>
+   <div class="panel-body">
 
-<p>
-  <strong>Category:</strong>
-  <%= @sentence.category %>
-</p>
+       <%= @sentence.content %><br>
+      <small>written in <b><%= show_language_name(@sentence.language) %></b> | belongs to <b><%= show_category_name(@sentence.category) %></b> category</small>
 
-<p>
-  <strong>Language:</strong>
-  <%= @sentence.language %>
-</p>
+   </div>
+</div>
 
-<%= link_to 'Edit', edit_sentence_path(@sentence) %> |
-<%= link_to 'Back', sentences_path %>
+
+
+
+<%= link_to '<button type="button" class="btn btn-info">Edit</button>'.html_safe, edit_sentence_path(@sentence) %>
+<%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, sentences_path %>

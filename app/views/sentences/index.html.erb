@@ -30,6 +30,8 @@
 </table>
 
 <%= link_to '<button type="button" class="btn btn-warning">Home</button>'.html_safe, root_path %>
+<%= link_to '<button type="button" class="btn btn-danger">Only English</button>'.html_safe, :method => choose_language(0) %>
+<%= link_to '<button type="button" class="btn btn-success">Only Portuguese</button>'.html_safe, :method => choose_language(1) %>
 </div>
 
 

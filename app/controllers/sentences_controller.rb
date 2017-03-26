@@ -1,9 +1,8 @@
 class SentencesController < ApplicationController
   before_action :set_sentence, only: [:show, :edit, :update, :destroy]
 
-  def show_category_name(category_number)
-
-    case category_number
+  def show_category_name(category_id)
+    case category_id
     when 0
       return "Family"
     when 1
@@ -19,9 +18,8 @@ class SentencesController < ApplicationController
 
   helper_method :show_category_name
 
-  def show_language_name(language_number)
-
-    case language_number
+  def show_language_name(language_id)
+    case language_id
     when 0
       return "EN-US"
     else
@@ -31,12 +29,25 @@ class SentencesController < ApplicationController
 
   helper_method :show_language_name
 
-
   # GET /sentences
   # GET /sentences.json
   def index
     @sentences = Sentence.all
   end
+
+  def choose_language(language_id)
+    @sentences = Sentence.where(language_id: language_id)
+  end
+
+  helper_method :choose_language
+
+  def choose_category(category_id)
+    @sentences = Sentence.where(category_id: category_id)
+  end
+
+  helper_method :choose_category
+
+
 
   # GET /sentences/1
   # GET /sentences/1.json
